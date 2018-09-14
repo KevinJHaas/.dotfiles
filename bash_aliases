@@ -7,6 +7,8 @@ alias edit="gvim"
 alias editt="gvim -p --remote-tab-silent"
 alias py="python"
 alias eos="ssh kjhaas@remote.eos.ncsu.edu"
+alias ..='cd ..'
+alias ...='cd ../..'
 
 ##
 #function to look for specific processes
