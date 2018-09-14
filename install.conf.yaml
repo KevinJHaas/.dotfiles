@@ -5,4 +5,4 @@
     ~/.bashrc: bashrc
     ~/.bash_logout: bash_logout
     ~/.vimrc: vimrc
-
+    ~/.bash_aliases: bash_aliases
