@@ -21,3 +21,4 @@ syntax on
 set number
 colorscheme desert
 highlight LineNr term=bold cterm=NONE ctermfg=Grey ctermbg=NONE gui=NONE guifg=Grey guibg=NONE
+set visualbell
