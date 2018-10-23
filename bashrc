@@ -55,11 +55,11 @@ if [ -n "$force_color_prompt" ]; then
 	color_prompt=
     fi
 fi
-
+export MYPS='$(echo -n "${PWD/#$HOME/~}" | awk -F "/" '"'"'{if (length($0) > 14) { if (NF>6) print $1 "/" $2 "/" $3 "/" $4 "/.../" $(NF-1) "/" $NF; else if (NF>5) print $1 "/" $2 "/" $3 "/" $4 "/.../" $NF; else print $PWD; } else print $0;}'"'"')'
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\$(eval "echo ${MYPS}")\[\033[00m\]\\n> '
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\$(eval "echo ${MYPS}")\\n> '
 fi
 unset color_prompt force_color_prompt
 
